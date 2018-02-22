@@ -31,13 +31,13 @@ comment:
   require_changes: no
 
 codecov:
-  token: 454e440d-dc48-4e0e-951c-3346c6a74ab8  
+  token: 4a4e5d3e-df36-40a1-8bd3-ca7ccad2ebb2  
 
 coverage:
   notify:
     slack:
       default:
-        url: "https://hooks.slack.com/services/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"
+        url: "https://hooks.slack.com/services/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"
         threshold: 0%
         only_pulls: false
         branches: null
