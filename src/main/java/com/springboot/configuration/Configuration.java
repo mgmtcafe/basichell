@@ -7,7 +7,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaSessionFactoryBean;
 @org.springframework.context.annotation.Configuration
 public class Configuration {
 
-	@SuppressWarnings("deprecation")
 	@Bean
 	public HibernateJpaSessionFactoryBean sessionFactory() {
 	    return new HibernateJpaSessionFactoryBean();

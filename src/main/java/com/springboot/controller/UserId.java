@@ -4,19 +4,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.dao.UserDao;
-
+@CrossOrigin
 @RestController
-@RequestMapping("/getUserById/{id}")
+@RequestMapping("/user")
 public class UserId {
+	
 	@Autowired
 	private UserDao userDao;
-	@GetMapping
+	
+	@GetMapping("/getUserById/{id}")
 	public Object getCodeById(@PathVariable("id") String getId){
 		Map<String, Object> status = new HashMap<String, Object>();
 		boolean parsable = true;
@@ -43,5 +48,12 @@ public class UserId {
 		}
 		return status;
 	}
+	@PostMapping("/createUser")
+	public boolean createVendor(@RequestBody Map<String,String> userData) {
 
+		return userDao.createUser(userData);
+	
+	}
+
+	
 }
