@@ -1,14 +1,24 @@
 package com.springboot;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/")
-public class HelloWorld {
-	@GetMapping
-	public String helloWorld() {
-		return "hello world!!";
-	}
+@EnableAutoConfiguration
+public class HelloWorldController {
+	
+	@RequestMapping("/hello")
+    String home(HttpServletRequest httpServletRequest) {
+		
+        return httpServletRequest.getHeader("X-FORWARDED-FOR");
+    }
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(HelloWorldController.class, args);
+    }
+
 }
