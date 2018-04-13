@@ -14,7 +14,7 @@ public class HelloWorld {
 	@RequestMapping("/hello")
     String home(HttpServletRequest httpServletRequest) {
 		
-        return httpServletRequest.getHeader("X-FORWARDED-FOR");
+        return httpServletRequest.getRemoteAddr();
     }
 
     public static void main(String[] args) throws Exception {
