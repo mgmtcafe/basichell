@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
-public class HelloWorldController {
+public class HelloWorld {
 	
 	@RequestMapping("/hello")
     String home(HttpServletRequest httpServletRequest) {
@@ -18,7 +18,7 @@ public class HelloWorldController {
     }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(HelloWorldController.class, args);
+        SpringApplication.run(HelloWorld.class, args);
     }
 
 }
